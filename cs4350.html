@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Theme–Track Evaluation Focus Matrix (Interactive, No Deep Link)</title>
+<style>
+  :root{
+    --bg:#ffffff; --fg:#0f172a; --muted:#475569; --border:#e2e8f0;
+    --card:#f8fafc; --accent-ghost:#11182710; --focus:#2563eb;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0b1020; --fg:#e6eaf3; --muted:#a5b4c7; --border:#26324a;
+      --card:#0e152b; --accent-ghost:#e6eaf310; --focus:#60a5fa;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial,"Apple Color Emoji","Segoe UI Emoji";}
+  .wrap{max-width:1100px;margin:24px auto;padding:0 16px}
+  h1{font-size:1.6rem;margin:0 0 .5rem}
+  p.lead{margin:.25rem 0 1rem;color:var(--muted)}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px}
+  .row{display:grid;gap:12px}
+  @media(min-width:720px){ .row{grid-template-columns:1fr 1fr} }
+  label{display:block;font-weight:600;font-size:.9rem;margin-bottom:6px}
+  select{width:100%;padding:.6rem .8rem;border:1px solid var(--border);border-radius:12px;background:var(--bg);color:var(--fg)}
+  select:focus{outline:3px solid var(--focus);outline-offset:1px}
+  .result{margin-top:14px;padding:14px;border:1px dashed var(--border);border-radius:12px;background:var(--bg)}
+  .k{display:inline-block;font-size:.75rem;padding:.15rem .5rem;border-radius:999px;border:1px solid var(--border);background:var(--accent-ghost);margin-left:.35rem;color:var(--muted)}
+  ol{margin:.25rem 0 0; padding-left:1.1rem}
+  .notes{color:var(--muted);font-size:.9rem;margin-top:.6rem}
+  .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  button{padding:.55rem .8rem;border:1px solid var(--border);border-radius:12px;background:var(--bg);color:var(--fg);cursor:pointer}
+  button:hover{background:var(--card)}
+  .table-wrap{overflow:auto;border:1px solid var(--border);border-radius:14px;margin-top:14px}
+  table{border-collapse:separate;border-spacing:0;width:100%;min-width:860px}
+  th,td{padding:12px 14px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+  thead th{position:sticky;top:0;background:var(--card);z-index:1}
+  tbody tr:nth-child(odd){background:color-mix(in srgb, var(--card) 80%, var(--bg))}
+  .hl{outline:2px solid var(--focus);outline-offset:-2px;border-radius:6px;background:color-mix(in srgb, var(--focus) 8%, transparent)}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+  @media print{
+    .toolbar{display:none}
+    .card{border:none;background:transparent}
+    .table-wrap{border:none}
+    thead th{position:static}
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <h1>Theme–Track Evaluation Focus Matrix</h1>
+  <p class="lead">Pick a <strong>Theme</strong> and <strong>Track</strong> to see the top three evaluation categories to prioritise.</p>
+
+  <section class="card">
+    <div class="row" role="group" aria-labelledby="picker-title">
+      <div>
+        <label for="theme"><span id="picker-title" class="sr-only">Pickers</span>Theme</label>
+        <select id="theme" autocomplete="off">
+          <option value="T1">Innovative Software Engineering</option>
+          <option value="T2">Serious Games</option>
+          <option value="T3">Artificial Creativity (PCG / GenAI)</option>
+          <option value="T4">VR Games (KAT-WALK-MINI-S)</option>
+          <option value="T5">Other Unique / Research-Driven</option>
+        </select>
+      </div>
+      <div>
+        <label for="track">Track</label>
+        <select id="track" autocomplete="off">
+          <option value="Commercial">Commercial</option>
+          <option value="Research">Research</option>
+          <option value="Competition">Competition</option>
+          <option value="Social">Social</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="result" aria-live="polite">
+      <div><strong>Top 3 Evaluation Categories</strong>
+        <span id="context" class="k"></span>
+      </div>
+      <ol id="focusList" class="focus"></ol>
+      <div id="notes" class="notes"></div>
+
+      <div class="toolbar">
+        <button id="toggleMatrix" type="button" aria-expanded="false" aria-controls="matrix">Show Full Matrix</button>
+        <button id="print" type="button">Print</button>
+      </div>
+
+      <div id="matrix" class="table-wrap" hidden>
+        <table>
+          <thead>
+            <tr>
+              <th>Theme ↓ / Track →</th>
+              <th>Commercial</th>
+              <th>Research</th>
+              <th>Competition</th>
+              <th>Social</th>
+            </tr>
+          </thead>
+          <tbody id="matrixBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <p class="lead" style="margin-top:12px">You’ll still be graded on all criteria; this tool highlights the three to prioritise for your chosen Theme–Track path.</p>
+</main>
+
+<script>
+  // Matrix data: top 3 focus + notes per Theme–Track
+  const MATRIX = {
+    T1: { // Innovative SE
+      Commercial: {
+        focus: ["Technical Innovation (code quality, performance)", "Game Design (mechanics tied to tech)", "Presentation & Promotion (market-ready polish)"],
+        notes: "Show measurable engineering gains; ensure onboarding & stability for release."
+      },
+      Research: {
+        focus: ["Technical Innovation (novel approach)", "Game Design (hypothesis-driven mechanics)", "Presentation & Promotion (publication readiness)"],
+        notes: "Define hypothesis & evaluation early; document architecture and benchmarks."
+      },
+      Competition: {
+        focus: ["Technical Innovation", "Game Design (rules compliance)", "Aesthetics & Audio (judge appeal)"],
+        notes: "Deliver a polished build with a standout technical hook; follow competition rules."
+      },
+      Social: {
+        focus: ["Technical Innovation", "Game Design (impact-oriented mechanics)", "Presentation & Promotion (impact measurement)"],
+        notes: "Design for real users; capture testimonials or adoption metrics."
+      }
+    },
+    T2: { // Serious Games
+      Commercial: {
+        focus: ["Game Design (clear learning goals)", "Balancing & Flow (educational pacing)", "Presentation & Promotion (user onboarding)"],
+        notes: "Keep lessons engaging and accessible; polish onboarding."
+      },
+      Research: {
+        focus: ["Game Design (hypothesis clarity)", "Balancing & Flow (learning curve)", "Presentation & Promotion (study design)"],
+        notes: "Link mechanics to learning outcomes; preregister or plan analyses if possible."
+      },
+      Competition: {
+        focus: ["Game Design (engagement & rules)", "Aesthetics & Audio (appeal)", "Balancing & Flow (fair progression)"],
+        notes: "Judges value clarity and fun; keep scope tight and polished."
+      },
+      Social: {
+        focus: ["Game Design (social good objectives)", "Balancing & Flow (accessibility)", "Presentation & Promotion (impact metrics)"],
+        notes: "Design for your partner’s context; gather usage/feedback data."
+      }
+    },
+    T3: { // Artificial Creativity
+      Commercial: {
+        focus: ["Technical Innovation (content gen quality)", "Aesthetics & Audio (polish of generated assets)", "Game Design (meaningful integration)"],
+        notes: "Show variety & coherence of generated content; avoid novelty-only demos."
+      },
+      Research: {
+        focus: ["Technical Innovation (PCG/AI novelty)", "Game Design (research on AI usage)", "Presentation & Promotion (publication readiness)"],
+        notes: "Report evaluation of generation quality & player impact."
+      },
+      Competition: {
+        focus: ["Aesthetics & Audio (judge appeal)", "Technical Innovation (uniqueness)", "Game Design (engagement)"],
+        notes: "Make the AI magic legible in gameplay; showcase moments in a short trailer."
+      },
+      Social: {
+        focus: ["Technical Innovation (for impact)", "Game Design (purpose-driven)", "Presentation & Promotion (stakeholder engagement)"],
+        notes: "Keep generation safe, reliable, and aligned with user needs."
+      }
+    },
+    T4: { // VR KAT-WALK
+      Commercial: {
+        focus: ["Game Design (VR onboarding & comfort)", "Technical Innovation (VR UI/UX)", "Aesthetics & Audio (immersion)"],
+        notes: "Comfort first; highlight the unique KAT-WALK value."
+      },
+      Research: {
+        focus: ["Technical Innovation (VR mechanics research)", "Game Design (hypothesis testing)", "Balancing & Flow (comfort pacing)"],
+        notes: "Plan sample size & measures; document comfort mitigations."
+      },
+      Competition: {
+        focus: ["Aesthetics & Audio (show appeal)", "Game Design (motion comfort & fun)", "Balancing & Flow (challenge pacing)"],
+        notes: "Short, impressive loops demo well; keep it stable on show floor."
+      },
+      Social: {
+        focus: ["Game Design (social VR experience)", "Presentation & Promotion (community adoption)", "Balancing & Flow (accessibility & comfort)"],
+        notes: "Account for varied mobility/VR familiarity."
+      }
+    },
+    T5: { // Other Unique / Research-Driven
+      Commercial: {
+        focus: ["Game Design (USP)", "Technical Innovation (if applicable)", "Presentation & Promotion (traction)"],
+        notes: "Clarify your unique selling point; track downloads/retention."
+      },
+      Research: {
+        focus: ["Technical Innovation / Game Design (novelty)", "Balancing & Flow", "Presentation & Promotion (research output)"],
+        notes: "Tie novelty to measurable outcomes; prepare a paper-ready package."
+      },
+      Competition: {
+        focus: ["Aesthetics & Audio (show appeal)", "Game Design (competition alignment)", "Balancing & Flow"],
+        notes: "Match rules & judging criteria; polish visuals and build stability."
+      },
+      Social: {
+        focus: ["Game Design (impact)", "Presentation & Promotion (stakeholder value)", "Balancing & Flow"],
+        notes: "Align with partner goals; measure and report impact."
+      }
+    }
+  };
+
+  const themeSel = document.getElementById('theme');
+  const trackSel = document.getElementById('track');
+  const focusList = document.getElementById('focusList');
+  const notes = document.getElementById('notes');
+  const ctx = document.getElementById('context');
+  const toggleMatrixBtn = document.getElementById('toggleMatrix');
+  const printBtn = document.getElementById('print');
+  const matrixEl = document.getElementById('matrix');
+  const matrixBody = document.getElementById('matrixBody');
+
+  function renderResult(){
+    const t = themeSel.value;
+    const r = trackSel.value;
+    const entry = MATRIX[t][r];
+    focusList.innerHTML = "";
+    entry.focus.forEach(item=>{
+      const li = document.createElement('li');
+      li.textContent = item;
+      focusList.appendChild(li);
+    });
+    notes.textContent = entry.notes;
+    const themeName = themeSel.options[themeSel.selectedIndex].text;
+    ctx.textContent = `${themeName} × ${r}`;
+  }
+
+  function buildMatrix(){
+    matrixBody.innerHTML = "";
+    const tracks = ["Commercial","Research","Competition","Social"];
+    const themeNames = {
+      T1: 'Innovative Software Engineering',
+      T2: 'Serious Games',
+      T3: 'Artificial Creativity (PCG / GenAI)',
+      T4: 'VR Games (KAT-WALK-MINI-S)',
+      T5: 'Other Unique / Research-Driven'
+    };
+    Object.keys(MATRIX).forEach(t=>{
+      const tr = document.createElement('tr');
+      const th = document.createElement('th');
+      th.scope = "row";
+      th.textContent = themeNames[t];
+      tr.appendChild(th);
+      tracks.forEach(track=>{
+        const td = document.createElement('td');
+        const ol = document.createElement('ol');
+        MATRIX[t][track].focus.forEach(item=>{
+          const li = document.createElement('li');
+          li.textContent = item;
+          ol.appendChild(li);
+        });
+        td.appendChild(ol);
+        td.dataset.theme = t;
+        td.dataset.track = track;
+        tr.appendChild(td);
+      });
+      matrixBody.appendChild(tr);
+    });
+  }
+
+  function highlightSelectedCell(){
+    const t = themeSel.value;
+    const r = trackSel.value;
+    matrixBody.querySelectorAll('td').forEach(td=>td.classList.remove('hl'));
+    const match = matrixBody.querySelector(`td[data-theme="${t}"][data-track="${r}"]`);
+    if (match) match.classList.add('hl');
+  }
+
+  function renderAll(){
+    renderResult();
+    if (!matrixEl.hasAttribute('hidden')) highlightSelectedCell();
+  }
+
+  // Init
+  (function init(){
+    buildMatrix();
+    renderAll();
+  })();
+
+  themeSel.addEventListener('change', renderAll);
+  trackSel.addEventListener('change', renderAll);
+
+  printBtn.addEventListener('click', ()=>window.print());
+
+  toggleMatrixBtn.addEventListener('click', ()=>{
+    const expanded = toggleMatrixBtn.getAttribute('aria-expanded') === 'true';
+    if (expanded){
+      matrixEl.hidden = true;
+      toggleMatrixBtn.setAttribute('aria-expanded','false');
+      toggleMatrixBtn.textContent = "Show Full Matrix";
+    } else {
+      matrixEl.hidden = false;
+      toggleMatrixBtn.setAttribute('aria-expanded','true');
+      toggleMatrixBtn.textContent = "Hide Full Matrix";
+      highlightSelectedCell();
+      matrixEl.scrollIntoView({behavior:'smooth', block:'nearest'});
+    }
+  });
+
+  // Click a cell to update pickers
+  matrixBody.addEventListener('click', (e)=>{
+    const td = e.target.closest('td[data-theme]');
+    if (!td) return;
+    themeSel.value = td.dataset.theme;
+    trackSel.value = td.dataset.track;
+    renderAll();
+  });
+</script>
+</body>
+</html>
