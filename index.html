@@ -1,0 +1,523 @@
+<!--  
+Original heading styles for reference:
+
+h1 {
+  color: #D4AF37; /* NUS Gold */
+}
+
+h2 {
+  color: #999999; /* Grey */
+}
+
+h3 {
+  color: #003366; /* NUS Blue */
+}
+
+h4 {
+  color: #FF671F; /* NUS Orange */
+  text-decoration: underline;
+}
+-->
+
+
+<h1 style="color: #D4AF37;"><strong>CS4350 Game Development Project</strong>  </h1>
+<h1 style="color: #D4AF37;">Learning Outcomes</h1>
+<p>This project-based course offers students the opportunity to work in teams to design and develop a game by following the key stages of the game development process. The course emphasises the design and implementation of core dynamics, game mechanics, player strategy, progression systems, balancing, level design, user interfaces, and technical features such as 3D graphics, animation, artificial intelligence, physics, and networking. For the teams which are continuing the game from CS3247, the focus will be on game balancing, polishing, novel software patterns and additional levels.</p>
+<p>Students will apply software engineering principles throughout the development lifecycle. They will also analyse existing games, explore market trends and opportunities, pitch original game concepts, and evaluate designs through structured playtests to understand user needs. Development will follow appropriate software development models and project management methodologies.</p>
+<p>In addition to technical skills, the course fosters teamwork, communication, and professional presentation. Students will also learn to build a portfolio to support careers in the game industry.</p>
+<p><img alt="GameDefinition.jpg" data-api-endpoint="https://canvas.nus.edu.sg/api/v1/courses/61655/files/4491714" data-api-returntype="File" src="https://canvas.nus.edu.sg/courses/61655/files/4491714/preview"/></p>
+<h1 style="color: #D4AF37;">Prerequisites</h1>
+<p>CS3247/NM3216/NM4260/NM4260HM</p>
+<p>File an appeal through CourseReg and mail to Department coordinators or UG office for waiver of <strong>Prerequisites</strong> if you have prior game dev experience, preferably with your portfolio. <br/><br/>MComp and PhD students are welcome! CS4350 may not be listed for you to register online due to pre-requisite (CS3247). File an appeal through CourseReg and mail to Department coordinators or Graduate Studies office if you are interested in taking CS4350.
+Students who have not taken CS3247, are recommended to complete the self-directed learning materials @ Canvas -&gt; Modules -&gt; Private Resources.
+</p>
+<p>
+You should complete all the assignments/mini-projects to actively participate in the project. You can seek the help of TA or Instructors if you need any help!
+</p>
+<h1 style="color: #D4AF37;">Lab Resources</h1>
+<p><strong>Reserved Lab Sessions (Unofficial):</strong></p>
+<p>You can use  Metaverse Foundry - COM3-B1-11 , exclusive for CS4350.  [<strong>IMPORTANT</strong>:No FOOD and DRINKS allowed inside the Lab. The Lab is monitored with cameras]  </p>
+<p>If your smart card cannot access the lab, pls apply for smart card access through mysoc. (approver id: bhojan).</p>
+<p><strong>Equipment:</strong></p>
+<p>Metaverse Foundry is equipped with Higher-end Gaming PCs and Laptops with Nvidia RTX 3080/RTX4090 Graphics cards, Android tablets and range of I/O devices,  including ... </p>
+<ul>
+<li>VR 360 Degree Thread Mills</li>
+<li>Virtual Reality(VR) Development Kit (eg. Apple Vision PRO, Oculus , HTC Vive, Vice Tracker, Vive Accessories)</li>
+<li>EEG Headset (Epoc +)</li>
+<li>Wireless Gaming Pads (eg Logitech F710)</li>
+<li>Gaming Joysticks (eg. Logitech  Extreme 3D Pro)</li>
+<li>Mobile Devices</li>
+<li>3D Depth Sensor (eg Softkinetic DS311)</li>
+<li>Motion Controller (eg. Leap Motion Controller)</li>
+<li>ZED cameras </li>
+</ul>
+<p>* If you need any additional device, please make a request with price details to your lecturer/TA.</p>
+<p><strong>Makers Lab @ COM3:</strong> You can use makers lab (eg 3D printers) to build specialised hardware for user interface.</p>
+<p>Thanks to Facebook/Oculus team for sponsoring VR Development Kits for the course. </p>
+<h1 style="color: #D4AF37;">Notable Start-ups by the Alumni's</h1>
+<ul>
+<li><strong>Actually Sane Studios [VR] - Winners of Global Gamejam 2016. [<a href="https://www.actuallysanestudios.com/" rel="noopener" target="_blank">https://www.actuallysanestudios.com/</a></strong></li>
+<li><strong><a href="https://www.actuallysanestudios.com/" rel="noopener" target="_blank"></a></strong><strong>Delta Duck Studios - Winners of IGF 2016, </strong>Wong Hong Wei - Co-Founder &amp; CTO  [<a href="https://www.pocketgamer.biz/asia/profile/62965/delta-duck-studios/" rel="noopener" target="_blank">https://www.pocketgamer.biz/asia/profile/62965/delta-duck-studios/]</a></li>
+<li><strong>Joysteak Studies -<a href="http://joysteak.com" rel="noopener" target="_blank"> joysteak.com  </a></strong></li>
+<li><strong></strong><strong>Winners of Judges Choice Award in Gamestart 2017 [Popular game: Songbird Symphony] - Mohammed Hanif and team</strong></li>
+<li><strong>Diceroll Studios - diceroll.com Eu Yong Xu   [<a href="https://www.facebook.com/dicerollstudios/" rel="noopener" target="_blank">https://www.facebook.com/dicerollstudios/ </a></strong></li>
+<li><strong><a href="https://www.facebook.com/dicerollstudios/" rel="noopener" target="_blank"></a></strong><strong>ASTROKNIGHT - blockchain game - EtherMage </strong>(<a href="https://ethermage.net/" rel="noopener" target="_blank">https://ethermage.net</a>), <strong>Wong Hong Wei </strong>- Co-Founder &amp; CTO [<a href="https://medium.com/ethermage/introducing-ethermage-a-trading-card-game-that-runs-on-the-ethereum-blockchain-network-285e563c2fa6" rel="noopener" target="_blank">https://medium.com/ethermage/introducing-ethermage-a-trading-card-game-that-runs-on-the-ethereum-blockchain-network-285e563c2fa6]</a></li>
+</ul>
+<h1 style="color: #D4AF37;">Recent Publications</h1>
+<ul>
+<li>Tu, W., Lim, B. Z., Ong, V. W., Tan, J. H., Lee, A. X., Xu, P. and Bhojan, A. (2025). <strong>Narrative-Based Interactive Learning for Scam Prevention: Rich Within Reach</strong>. In <i>Proceedings of the 17th International Conference on Computer Supported Education - Volume 1: CSEDU</i>: <strong><a href="https://bit.ly/rwr26" rel="noopener" target="_blank">https://bit.ly/rwr26</a></strong>      </li>
+</ul>
+<p> </p>
+<h1 style="color: #D4AF37;">Project Information</h1>
+<p>Most of the games developed in this course will be extension of the games developed in CS3247 Game Development course. However, a few new games will be allowed if the ideas are interesting and the team has capability to complete.  </p>
+<h3 style="color: #003366;">Themes Recommended for this Semester's Projects:  </h3>
+<p><strong>1)  Games to exhibit Innovative Software Engineering or Coding Approach in Game Development. </strong>Plan an approach, use it in implementation, evaluate it why it is good and present. Reference: <a href="https://conf.researchr.org/home/icse-2026/gas-2026" rel="noopener" target="_blank"> https://conf.researchr.org/home/icse-2026/gas-2026 and</a><a href="https://sites.google.com/view/gas-2024" rel="noopener" target="_blank"> https://sites.google.com/view/icsegasworkshop2025</a><strong> </strong></p>
+<p><strong>2)  </strong><strong>Serious Games with Novel idea. </strong>Like, educational game with GenAI (LLM) integration.</p>
+<p>eg. Equity Trading Game: Human vs AI game. [Suitable for teams with experience/interest in trading and ML].  Example gameplay. There will be 'n' rounds. Each round, AI will buy/sell shares and the player will also buy/sell shares. Compare the outcome and choose the winner of the round. </p>
+<p><strong>3)  </strong><strong>Games to exhibit Artificial creativity </strong>-  Game with 'Artificial creativity in game content generation (PCG)'. Use of modern GenAI tools in the development process is encouraged.  [Suitable for teams focusing on AI/ML and Games area]. </p>
+<p><strong>4)</strong> <strong>VR Games for KAT-WALK-MINI-S </strong>(VR treadmill) - <a href="https://www.kat-vr.com/products/kat-walk-mini-s" rel="noopener" target="_blank">https://www.kat-vr.com/products/kat-walk-mini-sLinks to an external site.</a>. [We have 2 new units in Metaverse Foundry]. It can be a simple game with a novel research study. </p>
+<p><strong>5)</strong> <strong>Others</strong> [should have either unique selling points or research component]. (encouraged the use of new technologies - VR/AR, Cryptocurrency/NFT, PCG with Machine Learning, Machine Learning/Analytics tool for Unity/Unreal asset store) </p>
+<h3 style="color: #003366;">Research Study</h3>
+<p>1) <strong>DERC: </strong>If you are planning for a research study which requires user survey, pls apply for Department Ethics Review Committee (DERC)  clearance @ <a href="https://derc.comp.nus.edu.sg/" rel="noopener" target="_blank">https://derc.comp.nus.edu.sg/</a>. As the approval will take ~4 weeks time, you are recommended to apply as early as possible, not later than end of Week 6 of the semester. </p>
+<p>2) References for sample game research projects. </p>
+<ul>
+<li>IEEE Transactions on Games (Recommended):  <a href="https://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=7782673" rel="noopener" target="_blank">https://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=7782673</a> </li>
+<li>CoG (Conference on Games) Proceedings. For year 2024: <a href="https://ieeexplore.ieee.org/xpl/conhome/10645493/proceeding" rel="noopener" target="_blank">https://ieeexplore.ieee.org/xpl/conhome/10645493/proceeding</a> [You can search for year 2023, 2025, etc]</li>
+<li>FDG (Foundation on Digital Games) Proceedings. For yaer 2025: <a href="https://dl.acm.org/doi/proceedings/10.1145/3723498" rel="noopener" target="_blank">https://dl.acm.org/doi/proceedings/10.1145/3723498</a> [You can search for year 2024, 2026, etc] </li>
+</ul>
+<h3 style="color: #003366;">Key Roles in Each Team: </h3>
+<p>Project Leader – Project coordination<br/>Assistant Leader – Coordination of play testing (critique, feedback) and response.<br/>Game Designers <br/>Software Engineers<br/>2D/3D Artists and Sound Engineers<br/>AI/ML Experts (Skills in AI/ML based development tool - artificial creativity, AI/ML in game logic) </p>
+<h3 style="color: #003366;">Expected Final Outcome: </h3>
+<p>At the end of this course the students should have developed games with innovative design and technology, <br/>- equivalent to the student games showcased in premier game development conferences/events  like, Game Developer Conference (GDC), Indie-Game Developer Festivel (IGF), PAX 10, etc.,  [Note: you are highly recommended submitting to one of the competitions] <br/>- AND published in https://itch.io/, https://indiegamestand.com/, through publishers, [or store.steampowered.com/]. Alternatively, you can develop assets for asset stores [eg. Path finding Tool for Unity Asset Store] and show traction.<br/>- AND Satisfying one of the following TRACK requirements.</p>
+<p>A: [COMMERCIAL TRACK] Planned towards creating a inde-game company (Web presence is required early, during the course) or partnered with local arcades/companies for publication. You should submit a business plan and show some traction (number of downloads or players) for you game published online. <br/>B: [RESEARCH TRACK] Should have a Research Hypothesis and Evaluation plan (user study and objective evaluation). Write a paper for publication. Plan the publication venue in the beginning [by week2] and work towards to deadline. If the submission system opens  after the sem, you can prepare all materials by the end of the sem and submit later.<br/>C. [COMPETITION TRACK] Planned to submit to a competition. Make sure that you know the rules and regulations of the selected competition early [week 2] and work towards the deadline. If the submission system opens  after the sem, you can prepare all materials by the end of the sem and submit later.<br/>D. [SOCIAL TRACK] deployed the project for social good, educational, community and government partners (NUS departments or Beyond]. Try to get a reference letter from the client on completion of the project.</p>
+<h1 style="color: #D4AF37;">Teaching Modes including Play-testing Requirements</h1>
+<p><strong>Student lead</strong> weekly seminar sessions, peer-learning, play-testing sessions and game demos.</p>
+<h3 style="color: #003366;">Online resources/tools:</h3>
+<ol>
+<li><strong>Canvas [Course Announcements, Course Materials, Seminar Materials, Submissions]</strong><strong></strong></li>
+<li><strong><a href="http://discord.com/" rel="noopener" target="_blank">Discord</a>[Only for general discussions, forum-board, team discussions, seeking clarifications]</strong>:<br/>- Link to join Discord server is given @ @ Canvas -&gt; Modules -&gt; Private Resources. <br/>- If you have a question about a project handouts or a technical issue, there is an excellent chance that other students have the same question. Please read the posts on Discord to see if there has been a traffic, and consider posting your questions there.</li>
+<li><strong>Jira</strong>for Project Management. [<a href="https://www.atlassian.com/software/jira" rel="noopener" target="_blank">https://www.atlassian.com/software/jira</a>] <br/>Project tasks, WBS and Gantt Chart</li>
+<li><strong>github or gitlab</strong> for project repo and version control.</li>
+<li><strong>Office Forms or Rubric [<a href="rubric.comp.nus.edu.sg">rubric.comp.nus.edu.sg</a>]- Peer-play testing &amp; Individual reflections </strong><br/>- Project Play-test feedback &amp; Critiques added here. Forms and rubrics will be made available at rubric.comp.nus.edu.sg.</li>
+</ol>
+<h3 style="color: #003366;">SoC UNIX Account for Non-SoC Students: </h3>
+<p>Some project groups may need a SoC account.<br/>Non-SoC students may proceed to the following URL to create/re-enable your SoC account <a href="https://mysoc.nus.edu.sg/~newacct" rel="noopener" target="_blank">https://mysoc.nus.edu.sg/~newacct</a>.</p>
+<p>Some project groups may need powerful GPUs for running ML/DL models, you can use SoC Compute Cluster: <a href="https://dochub.comp.nus.edu.sg/cf/guides/compute-cluster/start" rel="noopener" target="_blank">https://dochub.comp.nus.edu.sg/cf/guides/compute-cluster/start</a> </p>
+<h3 style="color: #003366;">Five key stages of presentation AND Play-Test Procedure :</h3>
+<p>Each team should play test for all other teams. Rubrics and forms for different stages of play-test will be provided. The entire play-test/peer review process will be facilitated over <a href="rubric.comp.nus.edu.sg">rubric.comp.nus.edu.sg</a> system. </p>
+<h4 style="color: #FF671F; text-decoration: underline;">STAGES:</h4>
+<p>Game concept (enhancement), Concept Phase,  Prototyping Phase, Alpha Phase, Beta Phase, Gold Phase/STePS.</p>
+<ul>
+<li><u>Play-test Critical Review/Feedback [<em>Prototype Phase, Alpha Phase, Beta Phase and Gold Phase</em>]: </u>(by the following week<strong>Monday 11.59 pm</strong>of the presentation week)</li>
+</ul>
+<p>Each group should add the group’s consolidated critiques, comments for further improvement. [Focus on goal of the team - competition or commercialisation or research or social]. To be coordinated and submitted by Assistant Leader of each team.</p>
+<ul>
+<li><u>Response to Play-test/Feedback [<em>Prototype Phase, Alpha Phase, Beta Phase and Gold Phase</em>]: (</u>by the following week<strong>Wednesday 11.59 pm</strong>of the presentation week)</li>
+</ul>
+<p>Each team should evaluate the quality of play test feedback and respond (actions). Comments accepted, Comments need further discussion (discuss in Discord channel), comments rejected with reason. Like/unlike/points each team who provided the feedback.</p>
+<ul>
+<li><u>Learning Reflections (Individual) [<em>Prototype Phase, Alpha Phase, Gold Phase</em>]:</u>(by the following<strong>Friday 11.59 pm</strong>of the presentation week).</li>
+</ul>
+<p>The module emphasises on PRACTICE BASED LEARNING WITH SELF-REFLECTIONS. Each  member of the class should submit learning reflections. The learning reflections should state what you have learned in from previous iteration to current iteration and what you have learned by reviewing other's works and by evaluating the reviews provided by others. You can follow "<strong>Developmental Reflection Based on a Learning Taxonomy</strong>" model and try to answer all the questions listed under this model @ <a href="https://uwaterloo.ca/centre-for-teaching-excellence/resources/reflection-framework-and-prompts" rel="noopener" target="_blank">https://uwaterloo.ca/centre-for-teaching-excellence/resources/reflection-framework-and-promptsLinks to an external site.</a></p>
+<h1 style="color: #D4AF37;">Project Schedule &amp; Grading Schemes</h1>
+<p>Create your project plan based on the major milestones listed below. Recommended<strong>jira</strong>software .  You should share the project plan with the TAs and Instructor.</p>
+<table border="1">
+<caption>Project Time-line</caption>
+<tbody>
+<tr>
+<td>Phase</td>
+<td>Activities and Grading Criteria</td>
+</tr>
+<tr>
+<td><strong>Concept Phase (1 week):</strong><br/>Week 1</td>
+<td>
+<p>Ideation and Forming of Teams &amp; Registration in Canvas.<br/>- Project Blog / Project website, Initial setup of Jira/Trello, Initial setup of Source Repo (github/gitlab)  -showing project concept, schedule, resources. The concept should include, Unique features (selling points or winning ingredient or novel research study), Proposed mechanics (including core and dynamics), Fun elements focused (easy, hard, serious, social) and related mechanics, Key challenges identified in completing the game under the proposed track. </p>
+<p><strong>Presentation: Week 2</strong></p>
+</td>
+</tr>
+<tr>
+<td><strong>Prototyping Phase (3 weeks):</strong><br/>Week 2 – Week 4</td>
+<td>
+<p>Development prototype including game map, concept arts, models, core mechanic.  </p>
+<p>Project Plan Status - Jira or Similar -.<strong> </strong>[After the seminar  on project planning]. Share with teaching team.</p>
+<p><strong>Progress presentation – Week 4*.</strong>[No need to be playable, Can show design prototype (paper prototype) and evidence on creation of game map, assets, core mechanic etc.</p>
+</td>
+</tr>
+<tr>
+<td><strong>Alpha phase (3 weeks + recess weak):</strong><br/>Week 5 – Week 7</td>
+<td>
+<p>Must have a playable demo. </p>
+<p>Website/Blog Status - Share the link with the teaching team after the seminar on The Game development business.<br/><strong>Week 7*: Peer play testing</strong>(Progress <strong>presentation</strong> and play test directions in <u>Week 7</u> seminar session)</p>
+</td>
+</tr>
+<tr>
+<td><strong>Beta phase (2 weeks):</strong><br/>Week 8 – Week 9</td>
+<td>
+<p>Extra polish, bug fixes, bonus features. Make the game more complete.</p>
+<p>Start working on formal GDD/TDD</p>
+<p><br/><strong>Week 9*: Peer play testing</strong>(Progress <strong>presentation</strong> and play test directions in <u>Week 9</u>  seminar session)</p>
+</td>
+</tr>
+<tr>
+<td><strong>Gold phase (3 weeks):</strong><br/>Week 10 – Week 12</td>
+<td>
+<p>Final all must have features, bug fixes, polish<br/>Marketing materials (poster, trailer etc), Research paper (user study, writing), Deployment to partner origanisation</p>
+<p><strong>Final Presentation*: Week 12</strong>(Final presentation and play test directions in <u><strong>Week 12</strong> </u> seminar session. During presentation, first highlight up to 10 key features of your game using 2 to 5 PPT slides. This final persentation is not graded, the focus is to share your game features with peers and teaching team for playtesting and evaluation)</p>
+</td>
+</tr>
+<tr>
+<td><strong>Reports and STePS (1 week):</strong><br/>Week 13</td>
+<td>Submit GDD-TDD, Source Code/assets, Executable and Marketing materials.</td>
+</tr>
+</tbody>
+</table>
+<p>*<strong> CONSULTATIONS: </strong> Prior (between Mon to Wed of presentation week) to each progress presentation session, you can have a 30mins consultation session with the TA about your work and items to present. </p>
+<h3 style="color: #003366;">Game Development Project is a group work: </h3> <p> Maximum Group Size: 6<strong> (six).     </strong><br/>Minimum Group Size: 4<strong> (four).</strong><br/> </p>
+<h3 style="color: #003366;">Project Deliverables in Week 13:-</h3>
+<strong>Week 13 Tuesday:</strong>Project executable, Project source, all assets, instructions on how to compile and run.<br/>media: DVD/CD/Thumpdrive/Dropbox/Drive/Canvas. If cloud drives, include the URL in a text file and upload to<strong><em>Canvas-&gt;Project-&gt;Final Submission-&gt;Project Source. </em></strong> <br/>
+<strong>Week 13 Friday:</strong>  Submit: Game Design Doc and/or Technical Doc, Poster (PPTX or other editable formats), 1 min promotional video, Key Features Slide (updated version is okay).<br/>Mode: Submit your Report to<em><strong>Canvas</strong><strong>-&gt; Files-&gt;Project-&gt;Final Submission-&gt;Project Documents.</strong></em>
+All submissions dues are at<strong>11.59pm</strong>of the stated day.<br/><br/>
+<h3 style="color: #003366;">FINAL EVALUATION CRITERIA (GOLD PHASE):-</h3>
+<ol>
+<li><strong>Game Design</strong>– Concept, Premise, Game Play, Mechanics/Dynamics, Experience/Emotion. The mechanics and dynamics that are crafted to bring the intended emotion. </li>
+<li><strong>Types of Fun element</strong>(Hard, Easy, Serious, People) present in the game. A game need not focus on all 4 types of fun element. However, it it focuses on a fun type, it should be done well with some mechanics, themes, technologies, etc and it need not be complex.  </li>
+<li><strong>Game Balancing &amp; Flow</strong>. Balanced game results in fair gameplay.  Player centric progressive challenges will improve the Flow/Interest. Well-paced educational flow and learning curve aligned with learning objectives.  </li>
+<li><strong>Aesthetics</strong> (Graphics, Animation and Visuals) - Are they well polished? Explosion particles, reactions after hit, firing impact, etc. Quality, variety, and coherence of AI/PCG-generated visuals.</li>
+<li><strong>Sound effects and Music</strong>. Are they well polished? - Suitable effects and background music at appropriate timings and they match well with the overall gameplay.</li>
+<li><strong>Technical:</strong>AI, Physics, Maths, Networking (Multiplayer), Special Techniques for handling UI, VR specific UI/UX design, Distribution channel integration (eg. steam, play store), Use of AI/ML tools for development, Depth and sophistication of AI/ML/Procedural Content Generation or others. Not all aspects are required to present in all games.  </li>
+<li><strong>Presentation</strong>(in STePS), Promotion &amp; Start-up effort (Website, Video, Poster, Active Sharing in Social Media/blogs by members/Links, Publishing in Game Stores (number of downloads, feedbacks, etc), Competition submission, Research Report, Letter of recognition for social track projects.   
+            <p data-end="2968" data-start="2941"><strong data-end="2966" data-start="2941">Track-Specific Notes:</strong></p>
+<ul data-end="3305" data-start="2971">
+<li data-end="3062" data-start="2971">
+<p data-end="3062" data-start="2973"><em data-end="2985" data-start="2973">Commercial</em>: Market readiness (stability, onboarding, monetization or release polish).</p>
+</li>
+<li data-end="3145" data-start="3065">
+<p data-end="3145" data-start="3067"><em data-end="3077" data-start="3067">Research</em>: Hypothesis clarity, evaluation rigor, and publication readiness.</p>
+</li>
+<li data-end="3226" data-start="3148">
+<p data-end="3226" data-start="3150"><em data-end="3163" data-start="3150">Competition</em>: Compliance with competition rules and submission standards.</p>
+</li>
+<li data-end="3305" data-start="3229">
+<p data-end="3305" data-start="3231"><em data-end="3239" data-start="3231">Social</em>: Measurable social impact (e.g., adoption numbers, testimonials).</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>Note: The evaluation criteria apply to all themes and tracks. However, depending on your chosen theme and track, some criteria will carry more weight or require different emphasis. For example, teams in the Research Track must demonstrate strong technical innovation and evaluation design, while Commercial Track teams must show market traction and polish.</p>
+<h3 style="color: #003366;">PROJECT PROPOSAL STEPS - GUIDELINE:</h3>
+<ul>
+<li data-end="3631" data-start="3608">
+<p data-end="3631" data-start="3611">Base Game Choice  → Theme Selection → Track Selection → Map to Relevant Evaluation Focus → Build &amp; Deliver.</p>
+</li>
+<li data-end="3631" data-start="3608">The page (<a href="https://anuflo.github.io/CS4350/eval.html" rel="noopener" target="_blank">https://anuflo.github.io/CS4350/eval.html</a> ) gives three evaluation categories to prioritise for your chosen Theme–Track path.</li>
+</ul>
+<h1 style="color: #D4AF37;">Seminar Schedule</h1>
+<table border="1">
+<thead>
+<tr>
+<td colspan="3">
+<p><strong>Schedule (tentative) of SEMINAR Sessions </strong><strong>( Thurs 10.00am - 12.00 pm, Venue : Metaverse Foundry</strong><strong>)    </strong><strong>FIRST Seminar SESSION is on 14th Aug 2025</strong></p>
+</td>
+</tr>
+<tr>
+<td>Week # </td>
+<td>Topic</td>
+<td>Tools used, Reference<br/>(Textbook Chapters)</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Week 1 </td>
+<td>
+<p>Introduction to course</p>
+<p>Introduction to Game Design: "Experience" and "Fun"</p>
+<p>Project briefing, Project Groups Registration.</p>
+<p>Note: </p>
+<p>Check module pre-requisite given above and complete the self-directed learning materials and assignments @</p>
+<p>varlabs.comp.nus.edu.sg [for Unreal Engine] OR</p>
+<p>varlabs.comp.nus.edu.sg/unitylab [for Unity3D].</p>
+</td>
+<td>
+<p>Lecture Notes<br/><br/>The Art of Game Design - A book of Lenses, Chapters 1,2,3,4 <br/> </p>
+<p>Discord.com for QA</p>
+</td>
+</tr>
+<tr>
+<td>Week 2</td>
+<td>
+<p>Short/High Level <strong>Pitch of Game Concept </strong>/ Enhancement to existing games (CS3247).  </p>
+<p>Note: Share Website/Blog with the teaching team.</p>
+<p>Note: Start preparing project plan in Jira/Trello and Source Repo (github/gitlab)</p>
+</td>
+<td>Discord.com for QA</td>
+</tr>
+<tr>
+<td>Week 3</td>
+<td>
+<p>Project Planning</p>
+<p>Note: You may Share Jira or Trello board (or similar) with teaching team</p>
+<p> </p>
+</td>
+<td>
+<p>Lecture Slides</p>
+<p>Jira/Trello - Project plan</p>
+</td>
+</tr>
+<tr>
+<td>Week 4</td>
+<td>
+<p><strong>Project Progress Presentation  - Prototyping Phase</strong></p>
+<p>Note: Check play test procedure under 'project Info' section in the blog/website or github readme.md. </p>
+</td>
+<td>Discord.com for QA<br/>
+<p>rubric - for peer evaluation, response  and reflection</p>
+</td>
+</tr>
+<tr>
+<td>Week 5</td>
+<td>
+<p>The game feel <br/>[Six Metrics of “Virtual Communication” of Games<br/>(to measure Game feel)] </p>
+<p>The Game JUICE! Game Polishing - Making the games better.</p>
+</td>
+<td>
+<p>Lecture Slides</p>
+<p>PollEV</p>
+</td>
+</tr>
+<tr>
+<td>Week 6 </td>
+<td>
+<p>Procedural Content Generation, AI/ML in Development Pipeline </p>
+<p>Project Consultation</p>
+<p>Note: Prepare to submit games to IGF. Teams can request for optional early play-test during week 6 and recess week.. [If no group is submitting for IGF, the playtesting will be done in Week 8]</p>
+</td>
+<td>Lecture Slides, Jira, PollEV</td>
+</tr>
+<tr>
+<td align="center" colspan="3">IGF Submission Due (Optional) .                  Mid term Break</td>
+</tr>
+<tr>
+<td>Week 7 </td>
+<td>
+<p><strong>Project progress Presentation</strong> &amp; Directions for Play testing - <strong>Alpha Phase </strong></p>
+<p>Note: Start GDD and TDD in Google Doc and share link in Discord for peers and Instructors to review.... [It is a continuous process, ends in week 13. Max: 20 Pages</p>
+</td>
+<td>
+<p>Lecture Slides, Jira/Trello, PollEV</p>
+<p>Discord for Q&amp;A </p>
+<p>rubric - for peer evaluation, response  and reflection</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Week 8</p>
+</td>
+<td>
+<p>The business of games</p>
+<p> Note: Topic Selection/Proposal for Peer-Presentation(Changed toSharing your experiences: Plan for presentation on technical challenges/solutions/tutorial/design evolution in your game)</p>
+</td>
+<td>
+<p>Lecture Slides, Jira/Trello, PollEV</p>
+<p>Discord for Q&amp;A </p>
+</td>
+</tr>
+<tr>
+<td>Week 9</td>
+<td>
+<p><strong>Project progress Presentation</strong> &amp; Directions for Play testing -<strong>Beta Phase </strong></p>
+</td>
+<td>
+<p>Discord for Q&amp;A </p>
+<p>rubric - for peer evaluation and response  <em>and reflection</em></p>
+</td>
+</tr>
+<tr>
+<td>Week 10</td>
+<td>
+<p>Topic based Presentation/Sharing your experiences   <br/>[If you are sharing experience, create a short tutorial for peers and future batches if appropriate]</p>
+<p>Beta Phase: Feedback from Teaching Team [Through direct direct comments in Discord and evaluation in Canvas Gradebook]</p>
+</td>
+<td>
+<p>Lecture Slides, Jira/Trello, PollEV</p>
+<p>Discord for Q&amp;A </p>
+</td>
+</tr>
+<tr>
+<td>Week 11</td>
+<td>
+<p>Topic based Presentation/Sharing your experiences   <br/>[If you are sharing experience, create a short tutorial for peers and future batches if appropriate]</p>
+<p>Prepare Game Document/Paper</p>
+</td>
+<td> </td>
+</tr>
+<tr>
+<td>Week 12</td>
+<td>
+<p><strong>Project Final Presentation/Demo </strong>and Directions for Play testing /Peer Evaluation -<strong>Gold Phase</strong>   (casual presentation/sharing - <strong>not graded</strong>)</p>
+<p>Note: Prepare for final project source/executable submission.</p>
+<p>Due:<strong>Week 13,</strong><strong>Tuesday 11 Nov 2025. </strong></p>
+</td>
+<td>rubric - for peer evaluation, response  and reflection</td>
+</tr>
+<tr>
+<td>Week 13</td>
+<td>
+<p>Final Presentation, Public demo, Peer-evaluation and Industry Evaluation @ 27th STePS  <strong>Wednesday 12 Nov 2025</strong></p>
+<p>Note: Prepare for submission of final project documents. <br/>Due:<strong>Week 13, Friday 14 Nov 2025.</strong></p>
+</td>
+<td> </td>
+</tr>
+<tr>
+<td>Week 14</td>
+<td><strong>[READING WEEK] ---- No EXAMS! <br/>Time to reflect on the last 13 weeks and to comment/discuss your learning journey...</strong></td>
+<td>---</td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<table border="1">
+<tbody>
+<tr>
+<td colspan="6"><strong>LABORATORY ( Check Lab Time-table for Free Slots. THE FOLLWOING SLOTS ARE RESERVED FOR CS4350)</strong></td>
+</tr>
+<tr>
+<td><strong>Group</strong></td>
+<td><strong>DAY</strong></td>
+<td><strong>TIME            </strong></td>
+<td><strong>VENUE        </strong>    </td>
+<td><strong>    GUIDED or PRACTICE  Lab</strong></td>
+<td></td>
+</tr>
+<tr>
+<td> </td>
+<td>All days</td>
+<td>8am-11.59pm</td>
+<td>Metaverse Foundry</td>
+<td>PRACTICE YOUR SELF, May have TA</td>
+<td></td>
+</tr>
+<tr>
+<td colspan="5">
+<p> </p>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 style="color: #003366;">Open-Topic Presentation: SAMPLE TOPICS</h3>
+<table border="1">
+<tbody>
+<tr>
+<td>1</td>
+<td>A study of  award-winning STUDENT games and their qualities Game Design/mechanics, experience, fun aspects)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Open topic on VR/AR (In depth study on specific aspect or comparison of existing systems including CAVE, Desktop VR, Mobile VR etc)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Compare most successful and failed games in the history of games. </td>
+</tr>
+<tr>
+<td>4</td>
+<td>UI/UX design for VR games </td>
+</tr>
+<tr>
+<td>5</td>
+<td>Using LLMs (Generative AI) to develop a game. [Can we use LLM to generate codes for a simple Unity game]. Note:- <strong>Given the trends, this TOPIC will be interesting for this semester.</strong></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Procedural Content Generation - A survey of techniques</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Performance enhancement and optimization techniques</td>
+</tr>
+<tr>
+<td>7</td>
+<td>AI/Machine Learning techniques in Games</td>
+</tr>
+<tr>
+<td>8</td>
+<td>International Game Market analysis</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Successful games and the experiences/emotions (deeper subtle emotions that these games build in player over time)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>The success and failure of gamification in education</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Dynamic difficulty adjustment in games using AI/machine learning of player behaviors in games</td>
+</tr>
+</tbody>
+</table>
+<h4 style="color: #FF671F; text-decoration: underline;">EVALUATION CRITERIA </h4>
+<ol>
+<li>Content: Relevent, Sufficient Depth, Enhances class members’ knowledge on the topic
+</li>
+<li>
+    Presentation: clarity, pace, use of visual aids, examples and demos
+</li>
+<li>
+Q&amp;A session: Presteres have engaged the class well and  gave convincing answers to the questions 
+</li>
+</ol>
+<h1 style="color: #D4AF37;">Assessment Components</h1>
+<table border="1">
+<tbody>
+<tr>
+<td><strong>COMPONENT</strong></td>
+<td><strong>WEIGHTAGE</strong></td>
+<td><strong>REMARKS</strong></td>
+</tr>
+<tr>
+<td>
+<p>Group: Project Progress Presentation, Playtesting Response </p>
+</td>
+<td>15%  </td>
+<td>
+<p>Concept, Prototyping, Alpha and Beta Phases [proto 3  + Alpha 5 +  Beta 7]<br/><br/></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Group: Participation in Project Evaluation: Project Play testing Critiques/Feedback/Comments.  </p>
+<p>Individual: Learning Reflection</p>
+</td>
+<td>16% </td>
+<td>
+<p>Useful and feasible constructive comments  [10%] (2.5 * 4 proto, alpha, beta, final)</p>
+<p>Learning Reflections [6%] (2 * 3 proto, alpha, final)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Group - Open topic presentation (learning by peer-presentation)<br/> </p>
+<p>Individual: Participation – Attendance, in class comments/feedback on group peer-presentations and lectures</p>
+</td>
+<td>10% </td>
+<td>Presentation  [5% ] <br/>+ Participation [5%] </td>
+</tr>
+<tr>
+<td>Group: Final Project Presentation &amp; Deliverables</td>
+<td>59%  </td>
+<td>GDD/TDD, Code, Executables</td>
+</tr>
+<tr>
+<td>Group: STePS - Top  Project<br/>Group: IGF (Similar Competition Submission) or Research Study or Published Game with good traction/reviews</td>
+<td>
+<p>May be considered for upto 5% Bonus in Final Presentation</p>
+</td>
+<td> </td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<h1 style="color: #D4AF37;">Workload</h1>
+<p>2-2-0-6-0<br/><br/><small>Workload Components : A-B-C-D-E<br/>A: no. of online lecture/reading/preparatory hours per week<br/>B: no. of tutorial/meeting/seminar hours per week <br/>C: no. of lab/assignment hours per week<br/>D: no. of hours for projects per week<br/>E: no. of discussion/problem solving hours per week </small></p>
